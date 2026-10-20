@@ -1,13 +1,15 @@
-const removeFromArray = function(theArray, numRemoved) {
-    let newArray = []
+const removeFromArray = function(theArray, ...args) {
+    const newArray = []
 
-    for(let i = 0; i < theArray.length; i++){
-        if (theArray[i] === numRemoved) {
-            continue
-        }else{
-            newArray.push(theArray[i])
-        }
-    }
+   
+        theArray.forEach((item) => {
+
+            if(!args.includes(item)){
+                newArray.push(item)
+            }
+            
+        })
+    
 
     return newArray
 };
